@@ -1,0 +1,473 @@
+import {
+  Activity,
+  BadgeCheck,
+  BarChart3,
+  Bell,
+  BookOpen,
+  Bot,
+  Building2,
+  CalendarClock,
+  FileText,
+  FolderKanban,
+  Gauge,
+  Globe2,
+  Layers,
+  LayoutDashboard,
+  LifeBuoy,
+  ListChecks,
+  Megaphone,
+  PlayCircle,
+  PhoneCall,
+  Plug,
+  Radar,
+  ScrollText,
+  Search,
+  Settings,
+  Target,
+  Users,
+  Video,
+  Wallet,
+  Workflow,
+} from 'lucide-react';
+
+export const workspaceNav = [
+  {
+    key: 'overview',
+    label: 'Overview',
+    href: '/workspace',
+    icon: LayoutDashboard,
+    description: 'A summary of the workspace and its connected modules.',
+    features: [],
+  },
+  {
+    key: 'business',
+    label: 'Business intelligence',
+    href: '/workspace/business',
+    icon: BarChart3,
+    permission: 'dashboard.view',
+    description:
+      'An owner view of lead acquisition, AI discovery, imports, sales activity, delivery load, clients and money — with reported amounts kept separate from verified finance records.',
+    features: [
+      'Lead pipeline, sources and conversion rate',
+      'Discovery and import throughput',
+      'Calls, meetings and overdue follow-ups',
+      'Reported vs verified money totals',
+    ],
+  },
+  {
+    key: 'notifications',
+    label: 'Notifications',
+    href: '/workspace/notifications',
+    icon: Bell,
+    permission: 'notifications.view',
+    description:
+      'Reminders, lead assignments and meeting updates addressed to you, with unread counts and a read state.',
+    features: [
+      'Follow-up due and overdue reminders',
+      'Lead assignment notices',
+      'Meeting scheduling updates',
+      'Unread filter and mark all as read',
+    ],
+  },
+  {
+    key: 'ai-workforce',
+    label: 'AI Workforce',
+    href: '/workspace/ai-workforce',
+    icon: Bot,
+    permission: 'agents.view',
+    description:
+      'Configure agent roles, provider, model, monthly limits and approval gates. Provider calls run in the background worker.',
+    features: [
+      'Twelve workforce agent roles',
+      'Provider, model and guardrails',
+      'Agent and workspace budget limits',
+      'Human approval gates',
+    ],
+  },
+  {
+    key: 'ai-runs',
+    label: 'Agent runs',
+    href: '/workspace/ai-workforce/runs',
+    icon: Activity,
+    permission: 'agents.view',
+    description:
+      'Every agent run with its status, recorded token usage, estimated cost, execution logs and safe cancellation.',
+    features: [
+      'Queued, running and finished runs',
+      'Input and output records',
+      'Token usage and cost estimates',
+      'Execution logs and retries',
+    ],
+  },
+  {
+    key: 'leads',
+    label: 'Leads',
+    href: '/workspace/leads',
+    icon: Users,
+    permission: 'leads.view',
+    description:
+      'A workspace-scoped lead pipeline with owners, priorities, follow-ups, notes, duplicate review and a full activity history.',
+    features: [
+      'Pipeline from New to Won or Lost',
+      'Search, filters and sorting',
+      'Follow-up dates and overdue tracking',
+      'Notes, activity and status history',
+      'Safe duplicate review without automatic merging',
+    ],
+  },
+  {
+    key: 'sales',
+    label: 'Sales & calls',
+    href: '/workspace/sales',
+    icon: PhoneCall,
+    permission: 'leads.view',
+    description:
+      'A caller workspace that only shows the leads assigned to each sales executive, with call logging, follow-up tasks and reminders.',
+    features: [
+      'Assigned leads only for callers',
+      'Call outcomes recorded in the lead timeline',
+      'Follow-up tasks with owner and due time',
+      'Overdue follow-up reminders and escalation',
+      'Upcoming meetings in the same view',
+    ],
+  },
+  {
+    key: 'meetings',
+    label: 'Meetings',
+    href: '/workspace/meetings',
+    icon: Video,
+    permission: 'meetings.view',
+    description:
+      'Lead and client meetings stored in the workspace. Google Calendar and Google Meet are used only after a real OAuth connection; status always reflects reality.',
+    features: [
+      'Schedule meetings against a lead or internal',
+      'Status lifecycle with history',
+      'Honest Google Calendar connection status',
+      'No fabricated Meet links or invites',
+    ],
+  },
+  {
+    key: 'opportunities',
+    label: 'Opportunities',
+    href: '/workspace/opportunities',
+    icon: Target,
+    permission: 'opportunities.view',
+    description:
+      'A workspace-scoped sales pipeline that extends leads with stages, expected value, owners, follow-ups and structured discovery.',
+    features: [
+      'Several opportunities per lead',
+      'Controlled stage workflow with lost reasons',
+      'Structured discovery and service requirements',
+      'Requirement document generated from saved records',
+      'Pipeline value kept separate from received revenue',
+    ],
+  },
+  {
+    key: 'services',
+    label: 'Service catalogue',
+    href: '/workspace/services',
+    icon: Layers,
+    permission: 'services.view',
+    description:
+      'One configurable catalogue of service categories and services, including explicit professional review for regulated work.',
+    features: [
+      'Five starter categories with 29 services',
+      'No pricing stored in the catalogue',
+      'Regulated services name the responsible professional',
+      'Archive without deleting history',
+    ],
+  },
+  {
+    key: 'proposals',
+    label: 'Proposals',
+    href: '/workspace/proposals',
+    icon: FileText,
+    permission: 'proposals.view',
+    description:
+      'Versioned client proposals with deterministic pricing, internal approval, manual sending, client responses and a print-ready document.',
+    features: [
+      'Draft, review, approve, send and record responses',
+      'One-time and recurring pricing kept separate',
+      'Immutable approved versions and explicit revisions',
+      'Opportunity-linked proposal history',
+      'Regulated services name the responsible professional',
+    ],
+  },
+  {
+    key: 'research',
+    label: 'Business research',
+    href: '/workspace/research',
+    icon: Search,
+    permission: 'research.view',
+    description:
+      'Evidence-based research briefs for a company, website, industry or CRM lead, with labelled verification and stored source references.',
+    features: [
+      'Company, website, industry and lead research',
+      'Findings labelled by verification level',
+      'Stored source references',
+      'Background execution through the AI worker',
+    ],
+  },
+  {
+    key: 'discovery',
+    label: 'AI discovery',
+    href: '/workspace/discovery',
+    icon: Radar,
+    permission: 'discovery.view',
+    description:
+      'Scheduled discovery campaigns that source businesses from connected providers, enrich them with labelled AI hypotheses and hold every candidate for human review.',
+    features: [
+      'Google Places or public web search sources',
+      'Daily limits, budgets and schedules',
+      'Separate facts, observations and AI hypotheses',
+      'Review queue with duplicate protection',
+      'Runs managed by the existing background worker',
+    ],
+  },
+  {
+    key: 'audits',
+    label: 'Website audits',
+    href: '/workspace/website-audits',
+    icon: Globe2,
+    permission: 'audits.view',
+    description:
+      'Bounded, SSRF-safe website audits that report technical SEO, on-page SEO, performance signals, structured data, accessibility and security findings.',
+    features: [
+      'Submit a public website',
+      'Robots-aware, page-limited crawl',
+      'Findings with evidence and fixes',
+      'Historical score comparison',
+      'Cancel an open audit safely',
+    ],
+  },
+  {
+    key: 'approvals',
+    label: 'Approvals',
+    href: '/workspace/approvals',
+    icon: BadgeCheck,
+    permission: 'approvals.review',
+    description:
+      'Runs marked as sensitive wait here for a human decision. Approving queues the run; rejecting cancels it.',
+    features: [
+      'Pending review queue',
+      'Approve or reject with a note',
+      'Decision history',
+      'Full audit trail',
+    ],
+  },
+  {
+    key: 'audit-log',
+    label: 'Audit log',
+    href: '/workspace/audit',
+    icon: ScrollText,
+    permission: 'audit.view',
+    description:
+      'A workspace-scoped record of sign-ins, invitations, membership changes, lead activity and other sensitive actions.',
+    features: [
+      'Filter by action, actor, resource and outcome',
+      'Paginated event history',
+      'Actor attribution',
+      'Sensitive values removed',
+    ],
+  },
+  {
+    key: 'settings',
+    label: 'Settings',
+    href: '/workspace/settings',
+    icon: Settings,
+    description:
+      'Workspace profile, team access, invitations and notification preferences.',
+    features: [
+      'Workspace profile',
+      'Team access',
+      'Notification preferences',
+      'Audit history',
+    ],
+  },
+  {
+    key: 'projects',
+    label: 'Projects',
+    href: '/workspace/projects',
+    icon: FolderKanban,
+    permission: 'projects.view',
+    description:
+      'Delivery projects created from accepted proposals, with tasks, milestones, deliverables, scope changes and a frozen commercial snapshot.',
+    features: [
+      'Project creation from an accepted proposal',
+      'Tasks, assignments, milestones and deliverables',
+      'Scope change requests with decisions',
+      'Workspace isolation and audit history',
+    ],
+  },
+  {
+    key: 'tasks',
+    label: 'Tasks',
+    href: '/workspace/tasks',
+    icon: ListChecks,
+    permission: 'tasks.view',
+    description:
+      'A cross-project task board with owners, priorities, due dates and status tracking linked back to delivery work.',
+    features: [
+      'Create and assign tasks',
+      'Status and priority tracking',
+      'Links to projects and clients',
+      'Overdue and due-today visibility',
+    ],
+  },
+  {
+    key: 'clients',
+    label: 'Clients',
+    href: '/workspace/clients',
+    icon: Building2,
+    permission: 'clients.view',
+    description:
+      'Client accounts with contacts, a unified communication timeline, service engagements and support history.',
+    features: [
+      'Client profiles and contacts',
+      'Communication timeline',
+      'Service engagements',
+      'Linked projects and proposals',
+    ],
+  },
+  {
+    key: 'engagements',
+    label: 'Engagements',
+    href: '/workspace/clients/engagements',
+    icon: CalendarClock,
+    permission: 'clients.view',
+    description:
+      'Ongoing service engagements that pair a catalogue service with the client, proposal and project that support it.',
+    features: [
+      'Recurring and one-time service',
+      'Contract value and renewals',
+      'Linked project and proposal',
+      'Status lifecycle with history',
+    ],
+  },
+  {
+    key: 'support',
+    label: 'Support',
+    href: '/workspace/support',
+    icon: LifeBuoy,
+    permission: 'tickets.view',
+    description:
+      'Client support tickets with priorities, assignment, internal notes and client-visible replies kept separate.',
+    features: [
+      'Ticket intake and assignment',
+      'Internal vs client-visible messages',
+      'Status and priority tracking',
+      'Resolution history',
+    ],
+  },
+  {
+    key: 'finance',
+    label: 'Finance',
+    href: '/workspace/finance',
+    icon: Wallet,
+    permission: 'finance.view',
+    description:
+      'Invoices, payments and expenses with deterministic integer money, explicit approval and issuance, and currency-safe totals.',
+    features: [
+      'Draft, approve and issue invoices',
+      'Partial and full payment tracking',
+      'Expense approval workflow',
+      'Currency-separated finance overview',
+    ],
+  },
+  {
+    key: 'memory',
+    label: 'Memory & Knowledge',
+    href: '/workspace/memory',
+    icon: BookOpen,
+    permission: 'knowledge.view',
+    description:
+      'Workspace knowledge, uploaded documents and durable AI memory with source attribution, provenance and version history.',
+    features: [
+      'Company, service, policy and client knowledge',
+      'Document ingestion and searchable chunks',
+      'Structured AI memories with confidence',
+      'Provenance-labelled agent context',
+    ],
+  },
+  {
+    key: 'marketing',
+    label: 'Marketing',
+    href: '/workspace/marketing',
+    icon: Megaphone,
+    permission: 'marketing.view',
+    description:
+      'A marketing and website execution engine: client profiles, campaign planning, versioned content review, website change proposals, SEO findings and performance reports — all internal until a human executes.',
+    features: [
+      'Client marketing profiles and service scope',
+      'Campaign planning with estimated budgets only',
+      'Versioned content drafts with approval',
+      'Website change proposals and manual execution evidence',
+      'SEO findings convertible to project tasks',
+      'Reports that label every data source',
+    ],
+  },
+  {
+    key: 'integrations',
+    label: 'Integrations',
+    href: '/workspace/integrations',
+    icon: Plug,
+    permission: 'integrations.view',
+    description:
+      'Provider adapter readiness across AI, email, CMS, analytics, search, ads, social, lead sources and webhooks. Credentials are read by name from the server environment; unconfigured providers are shown honestly.',
+    features: [
+      'Configured vs not-configured providers',
+      'Read-only adapter contracts, no live calls',
+      'Recent and failed sync events',
+      'Signature-verified inbound webhooks',
+    ],
+  },
+  {
+    key: 'executions',
+    label: 'Executions',
+    href: '/workspace/executions',
+    icon: PlayCircle,
+    permission: 'executions.view',
+    description:
+      'Approval-gated execution requests. A request must be approved, then independently authorised and executed. Only the labelled mock adapter runs in this phase — nothing is published, sent or spent.',
+    features: [
+      'Propose, submit, approve and reject',
+      'Independent execution authorisation',
+      'Idempotent re-execution and cancellation',
+      'Recorded evidence and failure reasons',
+    ],
+  },
+  {
+    key: 'automations',
+    label: 'Automations',
+    href: '/workspace/automations',
+    icon: Workflow,
+    permission: 'automations.view',
+    description:
+      'Reusable read-only workflows on the existing worker: onboarding, audit follow-up, SEO checks, approval reminders, report preparation and integration failure summaries.',
+    features: [
+      'Nine workflow definitions',
+      'Bounded retries with visible attempts',
+      'Step-level results and history',
+      'Cancel queued runs before they start',
+    ],
+  },
+  {
+    key: 'monitoring',
+    label: 'Monitoring',
+    href: '/workspace/monitoring',
+    icon: Gauge,
+    permission: 'integrations.view',
+    description:
+      'A read-only operational view of integration health, worker status, queue depth, pending approvals and recent execution or automation activity.',
+    features: [
+      'Integration health and failed syncs',
+      'Worker health and queue depth',
+      'Pending approvals and executions',
+      'Recent automation runs',
+    ],
+  },
+];
+
+export const workspaceSections = Object.fromEntries(
+  workspaceNav.map((item) => [item.key, item]),
+);

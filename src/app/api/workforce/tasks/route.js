@@ -1,0 +1,28 @@
+import {
+  errorResponse,
+  jsonOk,
+  validateBody,
+} from '@/lib/api';
+import { requirePermission } from '@/lib/auth/authorization';
+import { listTasks } from '@/lib/projects/service';
+import { taskQuerySchema } from '@/lib/projects/validation';
+
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
+
+export async function GET(request) {
+  try {
+    const viewer = await requirePermission('tasks.view');
+    const search = Object.fromEntries(new URL(request.url).searchParams);
+    const query = await validateBody(taskQuerySchema, search);
+
+    const result = await listTasks(
+      viewer.membership.workspaceId,
+      viewer.user.id,
+      query,
+    );
+    return jsonOk(result);
+  } catch (error) {
+    return errorResponse(error);
+  }
+}

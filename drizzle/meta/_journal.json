@@ -1,0 +1,90 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1795291731856,
+      "tag": "0000_safe_revanche",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1795372467569,
+      "tag": "0001_superb_thunderbolt_ross",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1795373963485,
+      "tag": "0002_neat_wiccan",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1795378026453,
+      "tag": "0003_cold_chamber",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1795415686277,
+      "tag": "0004_heavy_runaways",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1795419426305,
+      "tag": "0005_handy_cardiac",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1795423927539,
+      "tag": "0006_lazy_zzzax",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1795430519337,
+      "tag": "0007_strange_wonder_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1795438338677,
+      "tag": "0008_adorable_lady_deathstrike",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1795438671268,
+      "tag": "0009_big_ben_urich",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1795441045918,
+      "tag": "0010_lucky_hulk",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1795551241165,
+      "tag": "0011_handy_namorita",
+      "breakpoints": true
+    }
+  ]
+}
